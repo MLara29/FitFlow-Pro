@@ -62,3 +62,14 @@ npm run android:open   # abre no Android Studio para rodar ou gerar o .aab
 
 Antes da primeira publicação, troque o `appId` em `capacitor.config.ts` (e o `applicationId`/`namespace` em
 `android/app/build.gradle`) pelo seu domínio invertido: ele não pode mudar depois.
+
+## Publicar no GitHub Pages
+
+O Pages está configurado para servir a pasta `docs/` do branch `main`. Para atualizar o site:
+
+```bash
+npm run build:pages
+git add docs && git commit -m "Atualiza o site" && git push
+```
+
+O build usa a URL e a chave pública do Supabase que estiverem em `.env.local`.

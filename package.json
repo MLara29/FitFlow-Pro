@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "android": "npm run build && cap sync android",
-    "android:open": "cap open android"
+    "android:open": "cap open android",
+    "build:pages": "tsc -b && vite build --outDir docs --emptyOutDir"
   },
   "dependencies": {
     "@capacitor/android": "^8.6.0",
