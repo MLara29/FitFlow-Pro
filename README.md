@@ -39,8 +39,10 @@ Tabelas: `profiles` (UserProfile), `exercises`, `workout_plans`, `workout_days`,
 
 ## GIFs dos exercícios
 
-O design trazia uma única imagem de demonstração, usada em todos os exercícios. Para usar os GIFs reais,
-preencha `media_url` na tabela `exercises` com a URL de cada arquivo; eles tocam em loop automaticamente.
+Coloque cada GIF em `public/media` com o identificador do exercício como nome (ex.: `supino-reto.gif`,
+`leg-press.gif`; os identificadores estão na coluna `id` da tabela `exercises`). O app usa o arquivo
+automaticamente no próximo build; exercícios sem GIF mostram a imagem de demonstração.
+Também dá para apontar `media_url` na tabela `exercises` para uma URL externa.
 
 ## Conta: confirmação, senha e exclusão
 

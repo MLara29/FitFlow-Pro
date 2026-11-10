@@ -151,7 +151,7 @@ export default function Workout() {
             <span className="small accent" style={{ fontWeight: 600 }}>Toque para ver a execução</span>
           </span>
           <span className="media">
-            <img src={mediaSrc(exercise.mediaUrl)} alt={`Demonstração da execução: ${exercise.name}`} />
+            <img src={mediaSrc(exercise)} alt={`Demonstração da execução: ${exercise.name}`} />
           </span>
         </Link>
 

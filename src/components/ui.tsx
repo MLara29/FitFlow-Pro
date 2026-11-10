@@ -63,5 +63,17 @@ export function BackButton({ label = 'Voltar', onClick }: { label?: string; onCl
   )
 }
 
-/** URLs relativas apontam para a pasta public/ do app; absolutas (GIFs hospedados) passam direto. */
-export const mediaSrc = (url: string) => (/^(https?:)?\/\//.test(url) ? url : import.meta.env.BASE_URL + url.replace(/^\//, ''))
+declare const __MEDIA_FILES__: string[]
+const MEDIA_EXT = ['gif', 'webp']
+
+/**
+ * Mídia de um exercício, nesta ordem:
+ * 1. URL absoluta gravada em `media_url` (GIF hospedado fora do app);
+ * 2. arquivo public/media/<id>.gif (ou .webp);
+ * 3. o caminho relativo cadastrado (a imagem de demonstração).
+ */
+export function mediaSrc(exercise: { id: string; mediaUrl: string }): string {
+  if (/^(https?:)?\/\//.test(exercise.mediaUrl)) return exercise.mediaUrl
+  const own = MEDIA_EXT.map((ext) => `${exercise.id}.${ext}`).find((f) => __MEDIA_FILES__.includes(f))
+  return import.meta.env.BASE_URL + (own ? `media/${own}` : exercise.mediaUrl.replace(/^\//, ''))
+}

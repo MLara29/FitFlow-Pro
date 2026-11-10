@@ -99,7 +99,7 @@ export function ExerciseDetail() {
   return (
     <div className="screen">
       <div className="detail-media">
-        <img src={mediaSrc(e.mediaUrl)} alt={`Demonstração da execução: ${e.name}`} />
+        <img src={mediaSrc(e)} alt={`Demonstração da execução: ${e.name}`} />
         <button type="button" className="close-btn" aria-label="Fechar" onClick={() => nav(-1)}>
           <Icon name="close" size={20} stroke={2.2} />
         </button>
