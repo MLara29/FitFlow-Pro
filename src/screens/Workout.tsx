@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { BackButton, Icon, mediaSrc } from '../components/ui'
+import { BackButton, Icon, ExerciseMedia } from '../components/ui'
 import { EXERCISE_BY_ID } from '../data/exercises'
 import { clock, fmt, plural, sessionStats } from '../lib/stats'
 import { finishSession, logSet, startSession, useCurrent } from '../lib/store'
@@ -151,7 +151,7 @@ export default function Workout() {
             <span className="small accent" style={{ fontWeight: 600 }}>Toque para ver a execução</span>
           </span>
           <span className="media">
-            <img src={mediaSrc(exercise)} alt={`Demonstração da execução: ${exercise.name}`} />
+            <ExerciseMedia exercise={exercise} />
           </span>
         </Link>
 

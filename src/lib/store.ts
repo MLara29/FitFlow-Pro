@@ -1,5 +1,5 @@
 import { useMemo, useSyncExternalStore } from 'react'
-import { setExercises } from '../data/exercises'
+import { EXERCISE_BY_ID, setExercises } from '../data/exercises'
 import type { Exercise, ProfileDraft, User, UserProfile, WorkoutDay, WorkoutLog, WorkoutPlan, WorkoutSession } from '../types'
 import { buildPlan, profileSignature } from './plan'
 import { ymd } from './stats'
@@ -430,7 +430,8 @@ export function useCurrent() {
     const user = d.users.find((u) => u.id === d.sessionUserId) ?? null
     const profile = (user && d.profiles.find((p) => p.userId === user.id)) || null
     const plan = (user && d.plans.find((p) => p.userId === user.id && p.active)) || null
-    const days = plan ? d.days.filter((x) => x.planId === plan.id).sort((a, b) => ((a.weekday + 6) % 7) - ((b.weekday + 6) % 7)) : []
+    // Ignora exercícios que saíram do catálogo, para planos antigos não quebrarem as telas
+    const days = plan ? d.days.filter((x) => x.planId === plan.id).map((x) => ({ ...x, exercises: x.exercises.filter((e) => EXERCISE_BY_ID[e.exerciseId]) })).sort((a, b) => ((a.weekday + 6) % 7) - ((b.weekday + 6) % 7)) : []
     const sessions = user ? d.sessions.filter((s) => s.userId === user.id) : []
     const logs = user ? d.logs.filter((l) => l.userId === user.id) : []
     return { user, profile, plan, days, sessions, logs, ready: d.ready, syncError: d.syncError, recovery: d.recovery }

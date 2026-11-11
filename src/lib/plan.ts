@@ -4,14 +4,14 @@ import type { ProfileDraft, Restriction, SplitType, WorkoutDay, WorkoutDayExerci
 const HOME_EQUIPMENT = new Set(['Peso corporal', 'Halteres', 'Halter'])
 
 const AVOID: Record<Restriction, string[]> = {
-  ombros: ['desenvolvimento-militar', 'desenvolvimento-halteres', 'mergulho', 'elevacao-frontal', 'supino-declinado'],
+  ombros: ['desenvolvimento-militar', 'desenvolvimento-halteres', 'mergulho', 'mergulho-banco', 'elevacao-frontal'],
   joelhos: ['agachamento-livre', 'afundo', 'agachamento-bulgaro', 'cadeira-extensora'],
   lombar: ['levantamento-terra', 'remada-curvada', 'stiff', 'agachamento-livre', 'desenvolvimento-militar'],
-  punhos: ['flexao', 'triceps-testa', 'rosca-direta', 'mergulho'],
+  punhos: ['flexao', 'triceps-testa', 'rosca-direta', 'mergulho', 'mergulho-banco'],
 }
 
 const COMPOUND = new Set([
-  'supino-reto', 'supino-inclinado', 'supino-declinado', 'flexao', 'barra-fixa', 'puxada-frontal',
+  'supino-reto', 'supino-inclinado', 'flexao', 'barra-fixa', 'puxada-frontal',
   'remada-curvada', 'remada-unilateral', 'remada-baixa', 'levantamento-terra', 'desenvolvimento-halteres',
   'desenvolvimento-militar', 'mergulho', 'agachamento-livre', 'leg-press', 'afundo', 'agachamento-bulgaro',
   'elevacao-pelvica', 'stiff',
@@ -32,6 +32,7 @@ const LOWER_A: string[][] = [
   ['panturrilha-em-pe'],
   ['prancha'],
   ['abdominal-supra'],
+  ['abdominal-infra'],
 ]
 const LOWER_B: string[][] = [
   ['elevacao-pelvica', 'afundo'],
@@ -41,6 +42,7 @@ const LOWER_B: string[][] = [
   ['panturrilha-sentado'],
   ['abdominal-polia', 'abdominal-supra'],
   ['elevacao-pernas', 'prancha'],
+  ['abdominal-obliquo'],
 ]
 
 const T: Record<string, Template> = {
@@ -115,7 +117,7 @@ const T: Record<string, Template> = {
       ['elevacao-lateral', 'elevacao-frontal'],
       ['triceps-polia', 'triceps-frances'],
       ['crossover', 'crucifixo'],
-      ['mergulho'],
+      ['mergulho', 'mergulho-banco'],
     ],
   },
   pushB: {
@@ -123,11 +125,11 @@ const T: Record<string, Template> = {
     slots: [
       ['desenvolvimento-militar', 'desenvolvimento-halteres', 'elevacao-lateral'],
       ['supino-inclinado', 'flexao'],
-      ['supino-declinado', 'crucifixo'],
+      ['peck-deck', 'crucifixo'],
       ['elevacao-lateral'],
       ['triceps-testa', 'triceps-frances'],
       ['elevacao-frontal', 'flexao'],
-      ['mergulho'],
+      ['mergulho', 'mergulho-banco'],
     ],
   },
   pullA: {

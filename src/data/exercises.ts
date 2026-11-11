@@ -28,12 +28,6 @@ export const EXERCISES: Exercise[] = [
     'Desça devagar até os halteres ficarem ao lado do peito.',
     'Mantenha os punhos alinhados com os cotovelos durante todo o movimento.',
   ]),
-  ex('supino-declinado', 'Supino declinado', 'Peito', 'Barra', [
-    'Deite no banco declinado, prenda os pés e segure a barra um pouco além dos ombros.',
-    'Desça a barra com controle até a parte inferior do peito.',
-    'Empurre de volta até estender os cotovelos.',
-    'Peça ajuda para tirar e devolver a barra ao suporte.',
-  ]),
   ex('crucifixo', 'Crucifixo com halteres', 'Peito', 'Halteres', [
     'Deite no banco com os halteres acima do peito e as palmas voltadas uma para a outra.',
     'Abra os braços em arco, com os cotovelos levemente flexionados, até sentir alongar o peito.',
@@ -60,25 +54,25 @@ export const EXERCISES: Exercise[] = [
     'Desça com controle até estender os braços de novo.',
     'Evite balançar o corpo para ganhar impulso.',
   ]),
-  ex('puxada-frontal', 'Puxada frontal', 'Costas', 'Polia', [
+  ex('puxada-frontal', 'Puxada frontal na polia', 'Costas', 'Polia', [
     'Sente no aparelho, ajuste o apoio das coxas e segure a barra com pegada aberta.',
     'Puxe a barra até a parte de cima do peito, levando os cotovelos para baixo e para trás.',
     'Volte devagar até estender os braços.',
     'Mantenha o tronco firme, com leve inclinação para trás.',
   ]),
-  ex('remada-curvada', 'Remada curvada', 'Costas', 'Barra', [
+  ex('remada-curvada', 'Remada curvada com barra', 'Costas', 'Barra', [
     'Em pé, segure a barra, flexione levemente os joelhos e incline o tronco à frente com a coluna reta.',
     'Puxe a barra em direção ao abdômen, levando os cotovelos para trás.',
     'Desça com controle até estender os braços.',
     'Não arredonde a lombar nem use impulso do tronco.',
   ]),
-  ex('remada-unilateral', 'Remada unilateral', 'Costas', 'Halter', [
+  ex('remada-unilateral', 'Remada unilateral com halter', 'Costas', 'Halter', [
     'Apoie um joelho e a mão do mesmo lado no banco, com a coluna reta.',
     'Com o outro braço, puxe o halter até a lateral do tronco.',
     'Desça devagar até estender o braço.',
     'Complete as repetições e troque de lado.',
   ]),
-  ex('remada-baixa', 'Remada baixa', 'Costas', 'Polia', [
+  ex('remada-baixa', 'Remada baixa na polia', 'Costas', 'Polia', [
     'Sente no aparelho com os pés apoiados e os joelhos levemente flexionados.',
     'Segure o puxador e puxe até o abdômen, aproximando as escápulas.',
     'Volte devagar até estender os braços.',
@@ -98,7 +92,7 @@ export const EXERCISES: Exercise[] = [
     'Desça com controle até a altura das orelhas.',
     'Mantenha o abdômen firme e não arqueie a lombar.',
   ]),
-  ex('desenvolvimento-militar', 'Desenvolvimento militar', 'Ombros', 'Barra', [
+  ex('desenvolvimento-militar', 'Desenvolvimento militar com barra', 'Ombros', 'Barra', [
     'Em pé, segure a barra na altura das clavículas, mãos um pouco além dos ombros.',
     'Empurre a barra acima da cabeça até estender os braços.',
     'Desça devagar até a posição inicial.',
@@ -110,7 +104,7 @@ export const EXERCISES: Exercise[] = [
     'Desça devagar.',
     'Não encolha os ombros nem balance o tronco.',
   ]),
-  ex('elevacao-frontal', 'Elevação frontal', 'Ombros', 'Halteres', [
+  ex('elevacao-frontal', 'Elevação frontal com halteres', 'Ombros', 'Halteres', [
     'Em pé, halteres à frente das coxas, palmas voltadas para o corpo.',
     'Eleve os braços à frente até a altura dos ombros.',
     'Desça com controle.',
@@ -124,13 +118,13 @@ export const EXERCISES: Exercise[] = [
   ]),
 
   // Bíceps
-  ex('rosca-direta', 'Rosca direta', 'Bíceps', 'Barra', [
+  ex('rosca-direta', 'Rosca direta com barra', 'Bíceps', 'Barra', [
     'Em pé, segure a barra com as palmas para cima, mãos na largura dos ombros.',
     'Flexione os cotovelos e suba a barra até a altura do peito.',
     'Desça devagar até estender os braços.',
     'Mantenha os cotovelos junto ao tronco, sem balançar o corpo.',
   ]),
-  ex('rosca-alternada', 'Rosca alternada', 'Bíceps', 'Halteres', [
+  ex('rosca-alternada', 'Rosca alternada com halteres', 'Bíceps', 'Halteres', [
     'Em pé, um halter em cada mão, braços estendidos ao lado do corpo.',
     'Flexione um cotovelo e suba o halter até o ombro, girando a palma para cima.',
     'Desça devagar e repita com o outro braço.',
@@ -150,7 +144,7 @@ export const EXERCISES: Exercise[] = [
   ]),
 
   // Tríceps
-  ex('triceps-polia', 'Tríceps na polia', 'Tríceps', 'Polia', [
+  ex('triceps-polia', 'Tríceps na polia com corda', 'Tríceps', 'Polia', [
     'De frente para a polia alta, segure a barra ou a corda com os cotovelos junto ao tronco.',
     'Estenda os cotovelos, empurrando para baixo até os braços ficarem retos.',
     'Volte devagar até os antebraços passarem um pouco da horizontal.',
@@ -162,7 +156,7 @@ export const EXERCISES: Exercise[] = [
     'Estenda os cotovelos para voltar à posição inicial.',
     'Mantenha os cotovelos apontados para cima, sem abrir.',
   ]),
-  ex('triceps-frances', 'Tríceps francês', 'Tríceps', 'Halter', [
+  ex('triceps-frances', 'Tríceps francês com halter', 'Tríceps', 'Halter', [
     'Sentado ou em pé, segure um halter com as duas mãos acima da cabeça.',
     'Flexione os cotovelos e desça o halter atrás da cabeça.',
     'Estenda os cotovelos até o halter voltar ao alto.',
@@ -176,7 +170,7 @@ export const EXERCISES: Exercise[] = [
   ]),
 
   // Quadríceps e glúteos
-  ex('agachamento-livre', 'Agachamento livre', 'Quadríceps', 'Barra', [
+  ex('agachamento-livre', 'Agachamento livre com barra', 'Quadríceps', 'Barra', [
     'Apoie a barra na parte de cima das costas, pés na largura dos ombros.',
     'Desça levando o quadril para trás e flexionando os joelhos, com o peito aberto.',
     'Vá até as coxas ficarem paralelas ao chão, ou até onde conseguir manter a postura.',
@@ -194,7 +188,7 @@ export const EXERCISES: Exercise[] = [
     'Segure um instante e desça devagar.',
     'Alinhe os joelhos com o eixo da máquina.',
   ]),
-  ex('afundo', 'Afundo', 'Glúteos', 'Halteres', [
+  ex('afundo', 'Afundo com halteres', 'Glúteos', 'Halteres', [
     'Em pé, um halter em cada mão, dê um passo largo à frente.',
     'Desça até os dois joelhos formarem cerca de 90°.',
     'Empurre o chão com a perna da frente para voltar.',
@@ -206,7 +200,7 @@ export const EXERCISES: Exercise[] = [
     'Suba empurrando o chão com o pé da frente.',
     'Complete as repetições e troque de perna.',
   ]),
-  ex('elevacao-pelvica', 'Elevação pélvica', 'Glúteos', 'Barra', [
+  ex('elevacao-pelvica', 'Elevação pélvica com barra', 'Glúteos', 'Barra', [
     'Apoie a parte de cima das costas em um banco, com a barra sobre o quadril.',
     'Com os pés firmes no chão, eleve o quadril até alinhar tronco e coxas.',
     'Contraia os glúteos no alto por um instante.',
@@ -258,7 +252,7 @@ export const EXERCISES: Exercise[] = [
     'Desça devagar, sem relaxar totalmente.',
     'Não puxe o pescoço com as mãos.',
   ]),
-  ex('elevacao-pernas', 'Elevação de pernas', 'Abdômen', 'Barra fixa', [
+  ex('elevacao-pernas', 'Elevação de pernas na barra', 'Abdômen', 'Barra fixa', [
     'Pendure-se na barra fixa com os braços estendidos.',
     'Eleve as pernas até a altura do quadril, ou os joelhos em direção ao peito.',
     'Desça devagar, sem balançar.',
@@ -270,14 +264,139 @@ export const EXERCISES: Exercise[] = [
     'Volte devagar até o tronco ficar ereto.',
     'O movimento vem do abdômen, não dos braços nem do quadril.',
   ]),
+  // Acrescentados na lista de 50
+  ex('peck-deck', 'Peck deck', 'Peito', 'Máquina', [
+    'Sente com as costas apoiadas e ajuste o banco para as alças ficarem na altura do peito.',
+    'Com os cotovelos levemente flexionados, feche os braços à frente até as mãos quase se tocarem.',
+    'Segure um instante contraindo o peito.',
+    'Volte devagar, sem deixar os pesos baterem.',
+  ]),
+  ex('pulldown', 'Pulldown com braços estendidos', 'Costas', 'Polia', [
+    'De frente para a polia alta, segure a barra com os braços estendidos e o tronco levemente inclinado.',
+    'Puxe a barra em arco até as coxas, sem dobrar os cotovelos.',
+    'Segure um instante contraindo as costas.',
+    'Volte devagar até a barra ficar na altura dos ombros.',
+  ]),
+  ex('encolhimento', 'Encolhimento de ombros com halteres', 'Ombros', 'Halteres', [
+    'Em pé, um halter em cada mão ao lado do corpo, braços estendidos.',
+    'Eleve os ombros em direção às orelhas, o mais alto que conseguir.',
+    'Segure um instante no alto.',
+    'Desça devagar, sem girar os ombros nem dobrar os cotovelos.',
+  ]),
+  ex('rosca-concentrada', 'Rosca concentrada', 'Bíceps', 'Halter', [
+    'Sente no banco com as pernas afastadas e apoie o cotovelo na parte interna da coxa.',
+    'Com o braço estendido, flexione o cotovelo e suba o halter até o ombro.',
+    'Segure um instante contraindo o bíceps.',
+    'Desça devagar, complete as repetições e troque de braço.',
+  ]),
+  ex('mergulho-banco', 'Mergulho no banco', 'Tríceps', 'Peso corporal', [
+    'De costas para um banco, apoie as mãos na borda, ao lado do quadril, e estenda as pernas à frente.',
+    'Desça o corpo flexionando os cotovelos até cerca de 90°.',
+    'Empurre o banco para subir até estender os braços.',
+    'Mantenha as costas perto do banco e os cotovelos apontados para trás.',
+  ]),
+  ex('agachamento-hack', 'Agachamento hack', 'Quadríceps', 'Máquina', [
+    'Apoie as costas e os ombros no aparelho, com os pés na plataforma na largura dos ombros.',
+    'Destrave e desça flexionando os joelhos até as coxas ficarem paralelas à plataforma.',
+    'Empurre a plataforma para subir, sem travar os joelhos no final.',
+    'Mantenha as costas apoiadas e os joelhos alinhados aos pés.',
+  ]),
+  ex('cadeira-abdutora', 'Cadeira abdutora', 'Glúteos', 'Máquina', [
+    'Sente com as costas apoiadas e a parte de fora das coxas nos apoios.',
+    'Afaste as pernas o máximo que conseguir.',
+    'Segure um instante contraindo os glúteos.',
+    'Volte devagar, sem deixar os pesos baterem.',
+  ]),
+  ex('cadeira-adutora', 'Cadeira adutora', 'Adutores', 'Máquina', [
+    'Sente com as costas apoiadas e a parte de dentro das coxas nos apoios, pernas afastadas.',
+    'Feche as pernas até os apoios se encontrarem.',
+    'Segure um instante.',
+    'Volte devagar até a abertura inicial.',
+  ]),
+  ex('abdominal-infra', 'Abdominal infra no solo', 'Abdômen', 'Peso corporal', [
+    'Deite de costas com as mãos ao lado do corpo e as pernas estendidas.',
+    'Eleve as pernas juntas até ficarem na vertical.',
+    'Desça devagar, sem encostar os pés no chão.',
+    'Mantenha a lombar colada no chão durante todo o movimento.',
+  ]),
+  ex('abdominal-obliquo', 'Abdominal oblíquo (bicicleta)', 'Abdômen', 'Peso corporal', [
+    'Deite de costas com as mãos ao lado da cabeça e as pernas elevadas.',
+    'Leve um cotovelo em direção ao joelho oposto enquanto estende a outra perna.',
+    'Alterne os lados, como se pedalasse.',
+    'Gire o tronco, sem puxar o pescoço com as mãos.',
+  ]),
+  ex('extensao-lombar', 'Extensão lombar no banco', 'Lombar', 'Banco romano', [
+    'Ajuste o banco para o apoio ficar logo abaixo do quadril e prenda os calcanhares.',
+    'Com as mãos cruzadas no peito, desça o tronco à frente com a coluna reta.',
+    'Suba até o tronco alinhar com as pernas, sem passar desse ponto.',
+    'Faça o movimento devagar, sem impulso.',
+  ]),
 ]
+
+/** Ordem do catálogo (a da lista de 50 exercícios). */
+const ORDER = [
+  'supino-reto',
+  'supino-inclinado',
+  'crucifixo',
+  'crossover',
+  'flexao',
+  'peck-deck',
+  'puxada-frontal',
+  'barra-fixa',
+  'remada-curvada',
+  'remada-unilateral',
+  'remada-baixa',
+  'pulldown',
+  'levantamento-terra',
+  'desenvolvimento-halteres',
+  'desenvolvimento-militar',
+  'elevacao-lateral',
+  'elevacao-frontal',
+  'crucifixo-inverso',
+  'encolhimento',
+  'rosca-direta',
+  'rosca-alternada',
+  'rosca-martelo',
+  'rosca-scott',
+  'rosca-concentrada',
+  'triceps-polia',
+  'triceps-testa',
+  'triceps-frances',
+  'mergulho-banco',
+  'mergulho',
+  'agachamento-livre',
+  'leg-press',
+  'cadeira-extensora',
+  'afundo',
+  'agachamento-bulgaro',
+  'agachamento-hack',
+  'elevacao-pelvica',
+  'cadeira-abdutora',
+  'cadeira-adutora',
+  'mesa-flexora',
+  'cadeira-flexora',
+  'stiff',
+  'panturrilha-em-pe',
+  'panturrilha-sentado',
+  'abdominal-supra',
+  'elevacao-pernas',
+  'abdominal-infra',
+  'prancha',
+  'abdominal-obliquo',
+  'abdominal-polia',
+  'extensao-lombar',
+]
+EXERCISES.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id))
+
+/** Nomes do catálogo local por id, para reconhecer arquivos de mídia mesmo se o banco tiver nomes antigos. */
+export const LOCAL_NAMES: Record<string, string> = Object.fromEntries(EXERCISES.map((e) => [e.id, e.name]))
 
 export const EXERCISE_BY_ID: Record<string, Exercise> = Object.fromEntries(EXERCISES.map((e) => [e.id, e]))
 
 /** Troca o catálogo pelo que veio do banco (antes de as telas renderizarem). */
 export function setExercises(list: Exercise[]) {
   if (!list.length) return
-  const order = new Map(EXERCISES.map((e, i) => [e.id, i]))
+  const order = new Map(ORDER.map((id, i) => [id, i]))
   const sorted = [...list].sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999))
   EXERCISES.splice(0, EXERCISES.length, ...sorted)
   for (const k of Object.keys(EXERCISE_BY_ID)) delete EXERCISE_BY_ID[k]
@@ -291,7 +410,7 @@ export const LIBRARY_SECTIONS: { name: string; groups: string[] }[] = [
   { name: 'Ombros', groups: ['Ombros'] },
   { name: 'Bíceps', groups: ['Bíceps'] },
   { name: 'Tríceps', groups: ['Tríceps'] },
-  { name: 'Quadríceps e glúteos', groups: ['Quadríceps', 'Glúteos'] },
-  { name: 'Posteriores e panturrilha', groups: ['Posteriores', 'Panturrilha'] },
-  { name: 'Abdômen', groups: ['Abdômen'] },
+  { name: 'Quadríceps e glúteos', groups: ['Quadríceps', 'Glúteos', 'Adutores'] },
+  { name: 'Posteriores e panturrilhas', groups: ['Posteriores', 'Panturrilha'] },
+  { name: 'Abdômen e core', groups: ['Abdômen', 'Lombar'] },
 ]

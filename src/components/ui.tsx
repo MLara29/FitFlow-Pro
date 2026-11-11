@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { LOCAL_NAMES } from '../data/exercises'
 
 const PATHS = {
   home: <path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />,
@@ -64,16 +65,41 @@ export function BackButton({ label = 'Voltar', onClick }: { label?: string; onCl
 }
 
 declare const __MEDIA_FILES__: string[]
-const MEDIA_EXT = ['gif', 'webp']
+
+/** "Supino inclinado com halteres (frontal).mp4" -> "supino-inclinado-com-halteres" */
+const slug = (text: string) =>
+  text
+    .replace(/\.[a-z0-9]+$/i, '')
+    .replace(/\([^)]*\)/g, ' ')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+// Vídeo primeiro: é bem mais leve que GIF
+const RANK = ['mp4', 'webm', 'webp', 'gif']
+const ext = (file: string) => file.split('.').pop()!.toLowerCase()
+const MEDIA_BY_SLUG = new Map<string, string>()
+for (const file of [...__MEDIA_FILES__].filter((f) => RANK.includes(ext(f))).sort((a, b) => RANK.indexOf(ext(b)) - RANK.indexOf(ext(a)))) {
+  MEDIA_BY_SLUG.set(slug(file), file)
+}
 
 /**
  * Mídia de um exercício, nesta ordem:
- * 1. URL absoluta gravada em `media_url` (GIF hospedado fora do app);
- * 2. arquivo public/media/<id>.gif (ou .webp);
+ * 1. URL absoluta gravada em `media_url` (arquivo hospedado fora do app);
+ * 2. arquivo em public/media com o nome do exercício ou o id dele (ex.: "Supino reto com barra.mp4" ou "supino-reto.gif");
  * 3. o caminho relativo cadastrado (a imagem de demonstração).
  */
-export function mediaSrc(exercise: { id: string; mediaUrl: string }): string {
+export function mediaSrc(exercise: { id: string; name: string; mediaUrl: string }): string {
   if (/^(https?:)?\/\//.test(exercise.mediaUrl)) return exercise.mediaUrl
-  const own = MEDIA_EXT.map((ext) => `${exercise.id}.${ext}`).find((f) => __MEDIA_FILES__.includes(f))
-  return import.meta.env.BASE_URL + (own ? `media/${own}` : exercise.mediaUrl.replace(/^\//, ''))
+  const own = [exercise.id, slug(exercise.name), slug(LOCAL_NAMES[exercise.id] ?? '')].map((k) => MEDIA_BY_SLUG.get(k)).find(Boolean)
+  return import.meta.env.BASE_URL + (own ? `media/${encodeURIComponent(own)}` : exercise.mediaUrl.replace(/^\//, ''))
+}
+
+/** GIF/imagem ou vídeo em loop, sem som, com a execução do exercício. */
+export function ExerciseMedia({ exercise }: { exercise: { id: string; name: string; mediaUrl: string } }) {
+  const src = mediaSrc(exercise)
+  const label = `Demonstração da execução: ${exercise.name}`
+  return /\.(mp4|webm)$/i.test(src) ? <video src={src} aria-label={label} autoPlay loop muted playsInline preload="auto" /> : <img src={src} alt={label} />
 }

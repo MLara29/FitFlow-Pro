@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { BackButton, Icon, TabScreen, mediaSrc } from '../components/ui'
+import { BackButton, Icon, TabScreen, ExerciseMedia } from '../components/ui'
 import { EXERCISES, EXERCISE_BY_ID, LIBRARY_SECTIONS } from '../data/exercises'
 import { dayFocus } from '../lib/plan'
 import { DOW3, GOAL_LABEL, LEVEL_LABEL, PLACE_LABEL, SPLIT_LABEL, finished, plural, weekStart, ymd } from '../lib/stats'
@@ -99,7 +99,7 @@ export function ExerciseDetail() {
   return (
     <div className="screen">
       <div className="detail-media">
-        <img src={mediaSrc(e)} alt={`Demonstração da execução: ${e.name}`} />
+        <ExerciseMedia exercise={e} />
         <button type="button" className="close-btn" aria-label="Fechar" onClick={() => nav(-1)}>
           <Icon name="close" size={20} stroke={2.2} />
         </button>

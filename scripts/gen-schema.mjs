@@ -116,4 +116,17 @@ on conflict (id) do update set
   instructions = excluded.instructions;
 `
 writeFileSync(new URL('../supabase/schema.sql', import.meta.url), sql)
+
+// Atualização do catálogo para bancos já criados
+const seed = sql.slice(sql.indexOf('insert into public.exercises'))
+writeFileSync(
+  new URL('../supabase/update-02.sql', import.meta.url),
+  `-- FitFlow Pro, atualização 02: catálogo com os ${EXERCISES.length} exercícios. Rode uma vez no SQL Editor do Supabase.
+${seed}
+-- Exercícios que saíram do catálogo (mantidos se já houver séries registradas neles).
+delete from public.exercises e
+where e.id not in (${EXERCISES.map((e) => q(e.id)).join(', ')})
+  and not exists (select 1 from public.workout_logs l where l.exercise_id = e.id);
+`,
+)
 console.log(`supabase/schema.sql gerado com ${EXERCISES.length} exercícios`)

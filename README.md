@@ -13,7 +13,7 @@ npm run dev
 ## Banco de dados (Supabase)
 
 1. No painel do Supabase, abra **SQL Editor**, cole o conteúdo de `supabase/schema.sql` e execute.
-   Ele cria as tabelas, as regras de acesso (cada pessoa só vê os próprios dados) e os 40 exercícios.
+   Ele cria as tabelas, as regras de acesso (cada pessoa só vê os próprios dados) e os 50 exercícios.
 2. Em **Project Settings > API Keys**, copie a chave pública (anon / publishable) para `.env.local`:
 
    ```
@@ -29,7 +29,7 @@ Por padrão o Supabase pede confirmação de e-mail no cadastro; para testar sem
 
 ## Estrutura
 
-- `src/data/exercises.ts`: catálogo dos 40 exercícios (fonte do seed; `node scripts/gen-schema.mjs` regenera o SQL)
+- `src/data/exercises.ts`: catálogo dos 50 exercícios (fonte do seed; `node scripts/gen-schema.mjs` regenera o SQL)
 - `src/lib/plan.ts`: gerador de plano (2-3 dias: corpo inteiro; 4: superior/inferior; 5-6: empurrar/puxar/pernas)
 - `src/lib/store.ts`: estado do app, autenticação e gravação no Supabase
 - `src/screens/`: telas
@@ -37,11 +37,12 @@ Por padrão o Supabase pede confirmação de e-mail no cadastro; para testar sem
 Tabelas: `profiles` (UserProfile), `exercises`, `workout_plans`, `workout_days`, `workout_logs` e
 `workout_sessions` (uma execução de treino: agrupa os logs e marca o treino como concluído).
 
-## GIFs dos exercícios
+## Vídeos e GIFs dos exercícios
 
-Coloque cada GIF em `public/media` com o identificador do exercício como nome (ex.: `supino-reto.gif`,
-`leg-press.gif`; os identificadores estão na coluna `id` da tabela `exercises`). O app usa o arquivo
-automaticamente no próximo build; exercícios sem GIF mostram a imagem de demonstração.
+Coloque cada arquivo em `public/media` com o nome do exercício (ex.: `Supino inclinado com halteres.mp4`)
+ou o identificador dele (ex.: `supino-reto.gif`). Maiúsculas, acentos, espaços, hífens e trechos entre
+parênteses não fazem diferença. Aceita `.mp4`, `.webm`, `.webp` e `.gif`; prefira MP4, que é bem mais leve.
+O app usa o arquivo no próximo build; exercícios sem mídia mostram a imagem de demonstração.
 Também dá para apontar `media_url` na tabela `exercises` para uma URL externa.
 
 ## Conta: confirmação, senha e exclusão
